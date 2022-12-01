@@ -6,7 +6,6 @@ export interface Comment {
   imdbID: string;
   Type: string;
   Poster: string;
-  Search: string;
 }
 
 interface State {

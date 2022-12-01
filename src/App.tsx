@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMovie } from "./redux/actionCreators/getMovies";
+import { getMovies } from "./redux/actionCreators/getMovies";
 import { useDispatch } from "react-redux";
 import { useTypedSelector } from "./hooks/useTypeSelector";
 import CardInfo from "./components/cardInfo";
@@ -7,8 +7,6 @@ import Loader from "./components/loader";
 import Modal from "react-bootstrap/Modal";
 import CardDetail from "./components/cardDetail";
 import Pagination from "./components/pagination";
-// import SortButton from "./components/sortButton";
-
 import NavBar from "./components/navBar";
 
 import "./App.css";
@@ -24,39 +22,13 @@ function App() {
 
   const { comments, loading } = useTypedSelector((state) => state.comments);
 
-  console.log(comments);
-  console.log(loading);
-
   useEffect(() => {
-    dispatch(getMovie(currentPage, movie));
+    dispatch(getMovies(currentPage, movie));
   }, [currentPage, dispatch, movie]);
-
-  // const SortYear = () => {
-  //   comments.sort((a: any, b: any) => {
-  //     if (a.Year < b.Year) return 1;
-  //     if (a.Year > b.Year) return -1;
-  //     return 0;
-  //   });
-  //   console.log(comments.sort());
-  // };
 
   return (
     <div>
       <NavBar onSubmitHandler={setMovie} />
-      {/* <div className="App_button">
-        <SortButton
-          text="Years"
-          style={{ margin: "10px" }}
-          onClick={SortYear}
-        ></SortButton>
-        <SortButton
-          text="Series"
-          style={{ margin: "10px" }}
-          onClick={detail}
-        ></SortButton>
-
-        <SortButton text="Movie" onClick={detail}></SortButton>
-      </div> */}
       {loading ? (
         <Loader />
       ) : (

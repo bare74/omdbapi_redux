@@ -2,7 +2,7 @@ import axios from "axios";
 import { Dispatch } from "redux";
 import { ActionType, Action } from "../actionTypes";
 
-export const getMovie = (currentPage: number, movie: string) => {
+export const getMovies = (currentPage: number, movie: string) => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.GET_MOVIES_PENDING,
