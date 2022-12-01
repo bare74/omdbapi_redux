@@ -6,15 +6,15 @@ This project was build widt Typescript React
 
 npx create-react-app omdb_api --template typescript
 
-npm install react-bootstrap bootstrap
-npm install react-redux
-npm install axios
-npm install @reduxjs/toolkit
-npm i dotenv
-npm install --save reducer
-npm install --save @types/redux-actions
-npm install --save react-redux @types/react-redux
-npm i redux-thunk
+- npm install react-bootstrap bootstrap
+- npm install react-redux
+- npm install axios
+- npm install @reduxjs/toolkit
+- npm i dotenv
+- npm install --save reducer
+- npm install --save @types/redux-actions
+- npm install --save react-redux @types/react-redux
+- npm i redux-thunk
 
 In the project directory, you can run:
 
